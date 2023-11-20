@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowSavvy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .search-bar {
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 500px; /* Adjusted width to 500px */
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        nav.main-nav {
+            display: flex;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        nav.main-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav.main-nav a:hover {
+            color: #ffd700; /* Change the color on hover as needed */
+        }
+
+        nav.main-nav a:visited {
+            text-decoration: none;
+        }
+
+        nav.secondary-nav {
+            display: flex;
+            background-color: #eee; /* Lighter background color */
+            color: #333; /* Dark text color for contrast */
+            padding: 10px;
+            justify-content: center;
+        }
+
+        nav.secondary-nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav.secondary-nav a:hover {
+            color: #555; /* Change the color on hover as needed */
+        }
+
+        nav.secondary-nav a:visited {
+            text-decoration: none;
+        }
+
+        .slider {
+            width: 100%; /* Set width to 100% to touch corners */
+            overflow: hidden;
+            margin-top: 20px; /* Add margin to separate from the secondary navigation bar */
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin: 0; /* Remove margin to eliminate blank area */
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slide-btn-left {
+            left: 10px;
+        }
+
+        .slide-btn-right {
+            right: 10px;
+        }
+
+        main {
+            padding: 2px; 
+            transition: background-color 0.3s;
+        }
+
+        .movie-row {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to the next line */
+            justify-content: space-around; /* Adjusted to distribute space evenly */
+            margin-top: 20px;
+        }
+
+        .movie-card {
+            width: calc(20% - 20px); /* Set a percentage width with margin to create space */
+            margin: 0 10px 20px; /* Added margin to create space between cards */
+            text-align: center;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .movie-poster {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .movie-row-title {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .night-mode body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .night-mode main {
+            background-color: #000; 
+            color: #fff;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<section id="move">
+    <header>
+        <h1>ShowSavvy</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <a type="submit">Search</a>
+        </div>
+        <nav class="main-nav">
+            <a id="nightModeBtn">Night Mode</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Sign in</a>
+        </nav>
+    </header>
+
+    <nav class="secondary-nav">
+        <a href="#">Movies</a>
+        <a href="#">Sports</a>
+        <a href="#">Events</a>
+    </nav>
+</section>
+
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <button class="slide-btn slide-btn-left" onclick="prevSlide(0)">‹</button>
+                    <a href="#"><img src="slide1.jpeg" alt="Slide 1"></a>
+                    <button class="slide-btn slide-btn-right" onclick="nextSlide(0)">›</button>
+                </div>
+                <div class="slide">
+                    <button class="slide-btn slide-btn-left" onclick="prevSlide(1)">‹</button>
+                    <a href="#"><img src="slide2.jpg" alt="Slide 2"></a>
+                    <button class="slide-btn slide-btn-right" onclick="nextSlide(1)">›</button>
+                </div>
+                <div class="slide">
+                    <button class="slide-btn slide-btn-left" onclick="prevSlide(2)">‹</button>
+                    <a href="#"><img src="slide3.jpg" alt="Slide 3"></a>
+                    <button class="slide-btn slide-btn-right" onclick="nextSlide(2)">›</button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="movie-row-title">Trending</div>
+    
+
+    <div class="movie-row">
+        
+        <div class="movie-card">
+            <img src="movie1.jpg" alt="Movie 1" class="movie-poster">
+            <p>Wonder Woman</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie2.jpg" alt="Movie 2" class="movie-poster">
+            <p>The Batman</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie3.jpg" alt="Movie 3" class="movie-poster">
+            <p>Mission: Impossible - Fallout</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="Movie 4"" class="movie-poster">
+            <p>Mission: Impossible – Rogue Nation</p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
+    </footer>
+
+    <script>
+        // JavaScript for the slider
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelector('.slides');
+        const slideBtnLeft = document.querySelectorAll('.slide-btn-left');
+        const slideBtnRight = document.querySelectorAll('.slide-btn-right');
+        const nightModeBtn = document.getElementById('nightModeBtn');
+
+        let currentSlide = 0;
+
+        slideBtnLeft.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                showSlide(currentSlide - 1, index);
+            });
+        });
+
+        slideBtnRight.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                showSlide(currentSlide + 1, index);
+            });
+        });
+
+        nightModeBtn.addEventListener('click', toggleNightMode);
+
+        function showSlide(slideIndex, index) {
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            currentSlide = (slideIndex + totalSlides) % totalSlides;
+
+            slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+
+            slideBtnLeft[index].style.display = 'block';
+            slideBtnRight[index].style.display = 'block';
+
+            if (currentSlide === 0) {
+                slideBtnLeft[index].style.display = 'none';
+            } else if (currentSlide === totalSlides - 1) {
+                slideBtnRight[index].style.display = 'none';
+            }
+        }
+
+        function toggleNightMode() {
+            document.body.classList.toggle('night-mode');
+        }
+    </script>
+
+</body>
+</html>
