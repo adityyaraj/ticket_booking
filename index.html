@@ -400,11 +400,11 @@
     </footer>
 
     <script>
-const slider = document.querySelector('.slider');
+        const slider = document.querySelector('.slider');
         const slides = document.querySelector('.slides');
         const slideBtnLeft = document.querySelectorAll('.slide-btn-left');
         const slideBtnRight = document.querySelectorAll('.slide-btn-right');
-        const toggleBackgroundColorBtn = document.getElementById('toggleBackgroundColorBtn');
+        const nightModeBtn = document.getElementById('nightModeBtn');
 
         let currentSlide = 0;
 
@@ -420,7 +420,7 @@ const slider = document.querySelector('.slider');
             });
         });
 
-        toggleBackgroundColorBtn.addEventListener('click', toggleBackgroundColor);
+        nightModeBtn.addEventListener('click', toggleNightMode);
 
         function showSlide(slideIndex, index) {
             const totalSlides = document.querySelectorAll('.slide').length;
@@ -439,9 +439,10 @@ const slider = document.querySelector('.slider');
             }
         }
 
-        function toggleBackgroundColor() {
+        function toggleNightMode() {
             document.body.classList.toggle('night-mode');
         }
+
     </script>
 
 </body>
