@@ -67,21 +67,7 @@
         .book-now-button:hover {
             background-color: #0056b3;
         }
-
-.book-now-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; 
-  color: #fff; 
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.book-now-button:hover {
-  background-color: #0056b3; 
-}
-
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -261,7 +247,7 @@
             text-align: center;
             padding: 10px;
             bottom: 0;
-            width: 100%;
+            width: 98.8%;
         }
 
         footer a {
@@ -272,22 +258,29 @@
         footer a:hover {
             text-decoration: underline;
         }
+        #h1d{
+      color: white;
+    }
+
+    #h1d:visited {
+      color: rgb(234, 234, 243); 
+    }
     </style>
 </head>
 <body>
 <section id="move">
     <header>
-        <h1>ShowSavvy</h1>
+        <h1><a style="text-decoration:none" href="index.html" id="h1d">ShowSavvy</a></h1>
         <div class="search-bar">
             <input type="text" placeholder="Search...">
             <a type="submit">Search</a>
         </div>
         <nav class="main-nav">
             <a id="nightModeBtn">Night Mode</a>
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="#">About</a>
             <a href="#">Contact Us</a>
-            <a href="#">Sign in</a>
+            <a href="signin.html">Sign in</a>
         </nav>
     </header>
 
@@ -371,7 +364,7 @@
     <a href="book.html" class="book-now-button">BOOK NOW</a>
         </div>
         <div class="movie-card">
-            <img src="movie4.jpg" alt="Movie 4"" class="movie-poster">
+            <img src="movie4.jpg" alt="Movie 4" class="movie-poster">
             <p>Movie 2</p>
             <p>Genre: Action</p>
     <p>Duration: 2 hours</p>
